@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'jim'
 SITENAME = 'test'
-SITEURL = ''
+SITEURL = 'https://jamesrwarren.github.io/test_documentation/'
+THEME = 'bootstrap2-dark'
 
 PATH = 'content'
 
