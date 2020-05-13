@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>How To Publish</title>
+        <link rel="stylesheet" href="https://jamesrwarren.github.io/test_documentation/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://jamesrwarren.github.io/test_documentation/">OPG Data</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="https://jamesrwarren.github.io/test_documentation/pages/how-to-publish.html">How To Publish</a></li>
+                    <li><a href="https://jamesrwarren.github.io/test_documentation/pages/list-of-integrations.html">List of Integrations</a></li>
+                    <li><a href="https://jamesrwarren.github.io/test_documentation/pages/technologies-used.html">Technologies used</a></li>
+                    <li><a href="https://jamesrwarren.github.io/test_documentation/pages/the-team.html">The Team</a></li>
+                    <li><a href="https://jamesrwarren.github.io/test_documentation/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">How To Publish</h1>
+    
+    <p>To publish to this site you should pull the <code>content</code> branch. </p>
+<p>If not already installed then install pelican <code>pip install pelican</code></p>
+<p>Create a new branch for your changes and make sure it's up to date:</p>
+<div class="highlight"><pre><span></span><code><span class="err">git checkout -b mynewbranch &amp;&amp; git pull origin master</span>
+</code></pre></div>
+
+
+<p>Now checkout the remote branch <code>content</code>. This branch should <strong>not</strong> get merged to master:</p>
+<div class="highlight"><pre><span></span><code><span class="err">git checkout content</span>
+</code></pre></div>
+
+
+<p>Check you're in the content branch. You should see a folder called content. 
+Go in and make whatever changes are needed by adding .md files or modifying existing ones. </p>
+<p>Push your changes to the content branch so they're captured:</p>
+<div class="highlight"><pre><span></span><code><span class="err">git add .</span>
+<span class="err">git commit -m &quot;update static website content&quot;</span>
+<span class="err">git push origin content</span>
+</code></pre></div>
+
+
+<p>Now you can build the website locally with your content changes, 
+publish it and push to your branch</p>
+<div class="highlight"><pre><span></span><code><span class="n">pelican</span> <span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="n">output</span> <span class="o">-</span><span class="n">s</span> <span class="n">publishconf</span><span class="o">.</span><span class="n">py</span> 
+<span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Generate Pelican site&quot;</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">jekyll</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span> <span class="n">output</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">mynewbranch</span>
+</code></pre></div>
+
+
+<p>Now raise a PR in the normal way and it can be merged.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://github.com/ministryofjustice/opg-data">OPG Data</a></li>
+                            <li><a href="https://github.com/ministryofjustice/opg-data-deputy-reporting">OPG Data Deputy Reporting</a></li>
+                            <li><a href="https://github.com/ministryofjustice/opg-data-lpa-codes">OPG Data LPA Codes</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.publicguardian-scotland.gov.uk/general/contact-us">OPG Contact Us</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
